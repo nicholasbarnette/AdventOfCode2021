@@ -4,7 +4,7 @@ from Submarine import Submarine
 # python -m unittest test_Submarine
 
 
-class TestAnalyzeLines(unittest.TestCase):
+class TestSubmarine(unittest.TestCase):
 
     def test_new_submarine(self):
         self.assertEqual(Submarine().get_position(), [0, 0])

@@ -8,7 +8,7 @@ def main():
     sub = Submarine()
 
     try:
-        with open(os.path.join(BASE_PATH, './day2/part1/input'), "r") as f:
+        with open(os.path.join(BASE_PATH, './day2/part2/input'), "r") as f:
             lines = f.readlines()
 
             for l in lines:
