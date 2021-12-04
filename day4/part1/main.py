@@ -1,0 +1,55 @@
+import os
+from Bingo import Bingo
+import re
+
+BASE_PATH = r'/Users/nickmac/Desktop/AdventOfCode2021'
+
+
+def main():
+    try:
+        with open(os.path.join(BASE_PATH, './day4/part1/input'), "r") as f:
+            lines = f.readlines()
+
+            playable_numbers = lines[0].strip().split(',')
+            game = Bingo()
+
+            # Generate boards
+            numbers = []
+            i = 1
+            while i < len(lines):
+                line = lines[i]
+                nums = re.split(r"\s+", line.strip())
+                if len(nums) == 5:
+                    numbers = numbers + nums
+
+                if len(numbers) == 25:
+                    game.add_board(numbers)
+                    numbers = []
+
+                i += 1
+
+            # Play numbers
+            winner = None
+            last_number = None
+            for num in playable_numbers:
+                game.play_number(num)
+                winners = game.check_boards_for_winners()
+                if len(winners) >= 1:
+                    last_number = int(num)
+                    winner = winners[0]
+                    break
+
+            # Calculate outcome
+            cells = game.get_board(winner).get_cells()
+            unchecked_cells_sum = 0
+            for cell in cells:
+                if cell.get_checked() == False:
+                    unchecked_cells_sum += cell.get_number()
+            print(unchecked_cells_sum, last_number)
+            print(unchecked_cells_sum * last_number)
+
+    except FileNotFoundError:
+        print(FileNotFoundError)
+
+
+main()
