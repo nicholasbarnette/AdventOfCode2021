@@ -2,9 +2,9 @@ import math
 
 
 class Cell:
-    checked = False
 
     def __init__(self, number):
+        self.checked = False
         self.number = number
 
     def get_number(self):
@@ -22,9 +22,9 @@ class Cell:
 
 
 class Board:
-    rows = columns = 5
 
     def __init__(self, numbers):
+        self.rows = self.columns = 5
         self.board = [[None for col in range(
             self.columns)] for row in range(self.rows)]
         for idx, number in enumerate(numbers):

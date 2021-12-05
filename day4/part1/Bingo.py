@@ -2,11 +2,10 @@ from Board import Board
 
 
 class Bingo:
-    boards = []
-    numbers = []
 
     def __init__(self):
-        return
+        self.boards = []
+        self.numbers = []
 
     def add_board(self, numbers):
         self.boards.append(Board(numbers))
