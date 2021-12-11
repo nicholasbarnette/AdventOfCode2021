@@ -10,7 +10,6 @@ def get_unique_values(lines):
         output_values = l.split(' | ')[1].split(' ')
         for idx, v in enumerate(output_values):
             output_values[idx] = v.strip()
-        print(output_values)
 
         for v in output_values:
 

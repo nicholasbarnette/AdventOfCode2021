@@ -4,7 +4,7 @@ from segment import determine_output
 # python -m unittest test_segment
 
 
-class TestLanternFish(unittest.TestCase):
+class TestSegment(unittest.TestCase):
 
     def test_determine_output(self):
         self.assertEqual(determine_output(
