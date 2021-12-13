@@ -6,7 +6,7 @@ from utils import find_basins
 
 class TestUtils(unittest.TestCase):
 
-    def test_determine_output(self):
+    def test_find_basins(self):
         self.assertEqual(find_basins(
             ["2199943210",
              "3987894921",

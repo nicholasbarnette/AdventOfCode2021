@@ -6,7 +6,7 @@ from utils import find_low_points
 
 class TestUtils(unittest.TestCase):
 
-    def test_determine_output(self):
+    def test_find_low_points(self):
         self.assertEqual(find_low_points(
             ["2199943210",
              "3987894921",
